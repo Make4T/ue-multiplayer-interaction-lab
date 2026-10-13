@@ -44,3 +44,4 @@ Validated on Unreal Engine 5.8:
 
 See [docs/validation.md](docs/validation.md) for the exact evidence and scope.
 
+# ue-multiplayer-interaction-lab
