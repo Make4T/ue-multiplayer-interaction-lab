@@ -1,0 +1,20 @@
+{
+  "FileVersion": 3,
+  "EngineAssociation": "5.8",
+  "Category": "Games",
+  "Description": "A focused Unreal Engine multiplayer interaction and replication demo.",
+  "Modules": [
+    {
+      "Name": "ReplicationLab",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    }
+  ],
+  "Plugins": [
+    {
+      "Name": "ModelContextProtocol",
+      "Enabled": true
+    }
+  ]
+}
+
