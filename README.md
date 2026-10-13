@@ -10,6 +10,7 @@ A compact Unreal Engine 5.8 C++ project that demonstrates a server-authoritative
 - Replicated charge state with `OnRep` visual updates.
 - Replicated activation counter.
 - Runtime HUD showing net mode, local role and shared state.
+- Self-contained runtime lighting for consistent visibility on the engine Entry map.
 
 ## Interaction flow
 

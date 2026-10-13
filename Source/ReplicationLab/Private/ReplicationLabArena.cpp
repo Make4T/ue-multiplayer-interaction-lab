@@ -1,5 +1,8 @@
 #include "ReplicationLabArena.h"
 
+#include "Components/DirectionalLightComponent.h"
+#include "Components/PointLightComponent.h"
+#include "Components/SkyLightComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "UObject/ConstructorHelpers.h"
 
@@ -28,5 +31,29 @@ AReplicationLabArena::AReplicationLabArena()
     {
         BackWallMesh->SetStaticMesh(CubeMesh.Object);
     }
+
+    KeyLight = CreateDefaultSubobject<UDirectionalLightComponent>(TEXT("KeyLight"));
+    KeyLight->SetupAttachment(FloorMesh);
+    KeyLight->SetMobility(EComponentMobility::Movable);
+    KeyLight->SetRelativeRotation(FRotator(-52.0f, -35.0f, 0.0f));
+    KeyLight->SetIntensity(12.0f);
+    KeyLight->SetLightColor(FLinearColor(0.92f, 0.96f, 1.0f));
+    KeyLight->SetCastShadows(true);
+
+    SkyLight = CreateDefaultSubobject<USkyLightComponent>(TEXT("SkyLight"));
+    SkyLight->SetupAttachment(FloorMesh);
+    SkyLight->SetMobility(EComponentMobility::Movable);
+    SkyLight->SetIntensity(1.4f);
+    SkyLight->SetLightColor(FLinearColor(0.55f, 0.70f, 1.0f));
+    SkyLight->SetRealTimeCaptureEnabled(true);
+
+    FillLight = CreateDefaultSubobject<UPointLightComponent>(TEXT("FillLight"));
+    FillLight->SetupAttachment(FloorMesh);
+    FillLight->SetMobility(EComponentMobility::Movable);
+    FillLight->SetRelativeLocation(FVector(-350.0f, -450.0f, 500.0f));
+    FillLight->SetIntensity(7000.0f);
+    FillLight->SetAttenuationRadius(2200.0f);
+    FillLight->SetLightColor(FLinearColor(0.20f, 0.50f, 1.0f));
+    FillLight->SetCastShadows(false);
 }
 
